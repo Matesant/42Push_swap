@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/12 11:57:23 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/16 11:38:45 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,7 @@
 
 # include "../42_libft/libft.h"
 # include "../Printf/ft_printf.h"
+
+int	jorge(int i, char c);
 
 #endif

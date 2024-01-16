@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:30:25 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/12 11:56:47 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/16 11:40:43 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 int	jorge(int i, char c)
 {
-	return (i + c);
+	ft_printf("jorge %d", i + c);
+	return (0);
 }
