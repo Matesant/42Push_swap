@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:26:21 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/23 14:28:47 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:41:20 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,20 @@ void	sort(t_node **opa, int value)
 	}
 }
 
+void	ft_dealocatt(t_node **opa)
+{
+	t_node	*curr;
+	t_node	*temp;
+
+	curr = *opa;
+	while (curr)
+	{
+		temp = curr->next;
+		free(curr);
+		curr = temp;
+	}
+}
+
 int	main(void)
 {
 	t_node	*opa;
@@ -97,5 +111,6 @@ int	main(void)
 		printf("%d\n", curre->x);
 		curre = curre->next;
 	}
+	ft_dealocatt(&opa);
 	return (0);
 }
