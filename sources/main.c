@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:26:21 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/23 15:41:20 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:49:19 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,18 @@ void	begin(t_node **opa, int value)
 	node = ft_novo(value);
 	node->next = *opa;
 	*opa = node;
+}
+
+void	ft_end(t_node **node, int value)
+{
+	t_node	*fim;
+
+	fim = *node;
+	while (fim->next)
+	{
+		fim = fim->next;
+	}
+	(fim)->next = ft_novo(value);
 }
 
 void	after(t_node **opa, int value)
@@ -105,6 +117,8 @@ int	main(void)
 	sort(&opa, 12);
 	sort(&opa, 13);
 	sort(&opa, 11);
+	begin(&opa, 8);
+	ft_end(&opa, 33);
 	curre = opa;
 	while (curre != NULL)
 	{
