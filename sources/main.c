@@ -6,11 +6,11 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:26:21 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/16 16:25:43 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:28:47 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct s_node
@@ -19,30 +19,83 @@ typedef struct s_node
 	struct s_node	*next;
 }					t_node;
 
+t_node	*ft_novo(int valore)
+{
+	t_node	*node;
+
+	node = malloc(sizeof(t_node));
+	node->x = valore;
+	node->next = NULL;
+	return (node);
+}
+
+void	begin(t_node **opa, int value)
+{
+	t_node	*node;
+
+	node = ft_novo(value);
+	node->next = *opa;
+	*opa = node;
+}
+
+void	after(t_node **opa, int value)
+{
+	t_node	*curr;
+	t_node	*temp;
+
+	curr = *opa;
+	while (curr->x < value && curr->next->x < value)
+	{
+		curr = curr->next;
+	}
+	temp = curr->next;
+	curr->next = ft_novo(value);
+	curr->next->next = temp;
+}
+
+void	sort(t_node **opa, int value)
+{
+	t_node	*curr;
+
+	curr = *opa;
+	if (curr->x >= value)
+	{
+		begin(opa, value);
+		return ;
+	}
+	else
+	{
+		while (curr->next)
+		{
+			if (curr->x >= value)
+			{
+				after(opa, value);
+				return ;
+			}
+			curr = curr->next;
+		}
+		if (curr->x < value)
+			(curr)->next = ft_novo(value);
+	}
+}
+
 int	main(void)
 {
-	t_node	opa;
-	t_node	*currentes;
+	t_node	*opa;
+	t_node	*curre;
 
-	opa.x = 42;
-	opa.next = malloc(sizeof(t_node));
-	opa.next->x = 84;
-	opa.next->next = malloc(sizeof(t_node));
-	opa.next->next->x = 37;
-	opa.next->next->next = malloc(sizeof(t_node));
-	opa.next->next->next->x = 21;
-	opa.next->next->next->next = malloc(sizeof(t_node));
-	opa.next->next->next->next->x = 12;
-	opa.next->next->next->next->next = NULL;
-	currentes = &opa;
-	while (currentes)
+	opa = ft_novo(14);
+	sort(&opa, 10);
+	sort(&opa, 9);
+	sort(&opa, 15);
+	sort(&opa, 12);
+	sort(&opa, 13);
+	sort(&opa, 11);
+	curre = opa;
+	while (curre != NULL)
 	{
-		ft_printf("%d\n", currentes->x);
-		currentes = currentes->next;
+		printf("%d\n", curre->x);
+		curre = curre->next;
 	}
-	free(opa.next->next->next->next);
-	free(opa.next->next->next);
-	free(opa.next->next);
-	free(opa.next);
 	return (0);
 }

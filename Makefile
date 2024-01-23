@@ -1,6 +1,6 @@
 CC := cc
 NAME := push_swap
-CFLAGS	:= -Wextra -Wall -Werror
+CFLAGS	:= -Wextra -Wall -Werror -g3
 BIN := ./bin/
 SOURCE := ./sources/oi.c ./sources/main.c
 
