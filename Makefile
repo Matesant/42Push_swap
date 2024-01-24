@@ -9,7 +9,7 @@ SOURCE := ./sources/oi.c ./sources/main.c ./sources/errors.c \
 
 HEADER	:= -I ./include/
 
-PRINTF:= ./Printf/libftprintf.a
+PRINTF:= ./42_libft/Printf/libftprintf.a
 LIBFT:= ./42_libft/libft.a
 42LIBS:= $(PRINTF) $(LIBFT)
 OBJECTS := ${SOURCE:sources/%.c=$(BIN)%.o}
@@ -27,7 +27,7 @@ $(LIBFT):
 
 $(PRINTF):
 	@printf "$(BLUE)Compiling Printf...$(END)\n"
-	@make -C ./Printf --no-print-directory
+	@make -C ./42_libft/Printf --no-print-directory
 
 $(BIN):
 	@mkdir -p $(BIN)

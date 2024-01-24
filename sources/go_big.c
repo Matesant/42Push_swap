@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 17:38:25 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/24 17:39:55 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/24 17:44:54 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,6 @@
 
 void	ft_sort(t_stack **a, t_stack **b)
 {
+	*b = NULL;
+	*a = NULL;
 }

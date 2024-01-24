@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/24 17:42:19 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/24 17:44:26 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PUSH_SWAP_H
 
 # include "../42_libft/libft.h"
-# include "../Printf/ft_printf.h"
+# include "../42_libft/Printf/ft_printf.h"
 # include <stdlib.h>
 
 typedef struct s_stack
