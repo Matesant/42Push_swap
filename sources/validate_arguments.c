@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/24 16:12:40 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:54:16 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ void	ft_validate_alloc(int argc, char **argv, t_stack **stack_a)
 			ft_after(stack_a, ft_atoi(numbers[i]));
 			i++;
 		}
+		ft_delete_matrice(numbers);
 	}
 }

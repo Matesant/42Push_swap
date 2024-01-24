@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:13:17 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/24 15:50:16 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:50:40 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_stack	*ft_new_node(int value)
 {
 	t_stack	*node;
 
-	node = malloc(sizeof(node));
+	node = malloc(sizeof(t_stack));
 	node->x = value;
 	node->next = NULL;
 	return (node);
