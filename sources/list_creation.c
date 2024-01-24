@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:13:17 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/24 16:50:40 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/24 17:34:00 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,19 @@ void	ft_after(t_stack **node, int value)
 		curr = curr->next;
 	}
 	curr->next = ft_new_node(value);
+}
+
+int	ft_listsize(t_stack *node)
+{
+	t_stack	*curr;
+	int		len;
+
+	len = 0;
+	curr = node;
+	while (curr)
+	{
+		curr = curr->next;
+		len++;
+	}
+	return (len);
 }
