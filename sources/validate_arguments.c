@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   validate_arguments.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/24 16:08:44 by matesant         ###   ########.fr       */
+/*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
+/*   Updated: 2024/01/24 16:12:40 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_validate_alloc(int argc, char **argv, t_stack **stack_a)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	int		i;
+	char	**numbers;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	ft_validate_alloc(argc, argv, &stack_a);
-	while (stack_a)
+	i = 0;
+	if (argc == 1)
 	{
-		ft_printf("%d\n", stack_a->x);
-		stack_a = stack_a->next;
+		ft_error("Missing arguments");
 	}
-	return (0);
+	if (argc > 2)
+	{
+		while (argv[++i])
+			ft_after(stack_a, ft_atoi(argv[i]));
+	}
+	if (argc == 2)
+	{
+		numbers = ft_split(argv[1], ' ');
+		i = 0;
+		while (numbers[i])
+		{
+			ft_after(stack_a, ft_atoi(numbers[i]));
+			i++;
+		}
+	}
 }

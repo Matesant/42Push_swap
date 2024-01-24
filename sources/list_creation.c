@@ -1,21 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   list_creation.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/16 11:38:45 by matesant         ###   ########.fr       */
+/*   Created: 2024/01/24 15:13:17 by matesant          #+#    #+#             */
+/*   Updated: 2024/01/24 15:50:16 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../include/ft_push_swap.h"
 
-# include "../42_libft/libft.h"
-# include "../Printf/ft_printf.h"
+t_stack	*ft_new_node(int value)
+{
+	t_stack	*node;
 
-int	jorge(int i, char c);
+	node = malloc(sizeof(node));
+	node->x = value;
+	node->next = NULL;
+	return (node);
+}
 
-#endif
+void	ft_after(t_stack **node, int value)
+{
+	t_stack	*curr;
+
+	if (*node == NULL)
+	{
+		*node = ft_new_node(value);
+		return ;
+	}
+	curr = *node;
+	while (curr->next)
+	{
+		curr = curr->next;
+	}
+	curr->next = ft_new_node(value);
+}

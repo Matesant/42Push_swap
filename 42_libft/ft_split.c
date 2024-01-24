@@ -6,68 +6,90 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 09:47:21 by matesant          #+#    #+#             */
-/*   Updated: 2023/11/16 17:46:32 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:11:09 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_count_words(char const *str, char limiter)
+static int	ft_count_words(char const *s, char c)
 {
-	size_t	index;
-	size_t	counter;
+	size_t	words;
 
-	index = 0;
-	counter = 0;
-	while (str[index])
+	words = 0;
+	while (*s != '\0')
 	{
-		while ((str[index]) && (str[index] == limiter))
-			index++;
-		if (str[index])
-			counter++;
-		while ((str[index]) && (str[index] != limiter))
-			index++;
+		if (*s == c)
+			s++;
+		else
+		{
+			words++;
+			while (*s != '\0' && *s != c)
+				s++;
+		}
 	}
-	return (counter);
+	return (words);
 }
 
-static size_t	ft_len_substring(char const *str, int start, char limiter)
+static void	ft_erase(char **array)
 {
-	size_t	length;
+	int	count;
 
-	length = 0;
-	while ((str[start]) && (str[start] != limiter))
+	count = 0;
+	if (!array)
+		return ;
+	while (array[count])
 	{
-		start++;
-		length++;
+		if (array[count] != NULL)
+		{
+			free(array[count]);
+			array[count] = NULL;
+		}
+		count++;
 	}
-	return (length);
+	free(array);
+}
+
+static char	**ft_allocate(char **array, const char *s, char c)
+{
+	int		word_len;
+	size_t	i;
+
+	i = 0;
+	while (*s)
+	{
+		word_len = 0;
+		while (s[word_len] != c && s[word_len])
+			word_len++;
+		array[i] = (char *)ft_calloc((word_len + 1), sizeof(char));
+		if (array[i] == NULL)
+		{
+			ft_erase(array);
+			return (NULL);
+		}
+		ft_strlcpy(array[i], s, word_len + 1);
+		i++;
+		while (*s != c && *s)
+			s++;
+		while (*s == c && *s)
+			s++;
+	}
+	array[i] = NULL;
+	return (array);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		number_words;
-	int		len_substr;
-	int		index;
-	int		start;
-	char	**words_array;
+	int		words;
+	char	**array;
 
-	if (s == NULL)
-		return (0);
-	number_words = ft_count_words(s, c);
-	words_array = (char **)ft_calloc((number_words + 1), sizeof(char *));
-	if (words_array == NULL)
+	if (!(s))
 		return (NULL);
-	index = 0;
-	start = 0;
-	while (index < number_words)
-	{
-		while ((s[start]) && (s[start] == c))
-			start++;
-		len_substr = ft_len_substring(s, start, c);
-		words_array[index] = ft_substr(s, start, len_substr);
-		start = start + len_substr;
-		index++;
-	}
-	return (words_array);
+	words = ft_count_words(s, c);
+	array = (char **)ft_calloc((words + 1), sizeof(char *));
+	if (!(array))
+		return (NULL);
+	while (*s == c && *s)
+		s++;
+	return (ft_allocate(array, s, c));
 }
