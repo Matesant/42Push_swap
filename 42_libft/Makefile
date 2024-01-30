@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = cc
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -g3
 RM = rm -rf
 
 HEADER = .

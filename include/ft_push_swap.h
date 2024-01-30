@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 14:43:59 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/30 15:33:31 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 }					t_stack;
 
 // error handling
-void				ft_error(char *str);
+void				ft_error(char *str, t_stack **a, t_stack **b);
 void				ft_dealocate(t_stack **node);
 
 // nodes creation
@@ -44,16 +44,14 @@ void				ft_sort(t_stack **a, t_stack **b);
 // instructions
 void				ft_pa(t_stack **a, t_stack **b);
 void				ft_pb(t_stack **a, t_stack **b);
-void				ft_ss(t_stack **a, t_stack **b);
 void				ft_sb(t_stack **b);
 void				ft_sa(t_stack **a);
-void				ft_rr(t_stack **a, t_stack **b);
+void				ft_ss(t_stack **a, t_stack **b);
 void				ft_rb(t_stack **b);
 void				ft_ra(t_stack **a);
-void				ft_rotate(t_stack **x);
-void				ft_rrr(t_stack **a, t_stack **b);
+void				ft_rr(t_stack **a, t_stack **b);
 void				ft_rrb(t_stack **b);
 void				ft_rra(t_stack **a);
-void				ft_rev_rotate(t_stack **x);
+void				ft_rrr(t_stack **a, t_stack **b);
 
 #endif
