@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_rotate.c                                       :+:      :+:    :+:   */
+/*   3.rev_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:22:35 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 14:24:28 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:44:50 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@ void	ft_rev_rotate(t_stack **x)
 
 	if (!*x || !(*x)->next)
 		return ;
-	temp = *x;
+	temp = ft_lstend(*x);
+	temp2 = ft_lstend2(*x);
+	temp->next = *x;
+	temp2->next = NULL;
+	*x = temp;
 }
 
 void	ft_rra(t_stack **a)

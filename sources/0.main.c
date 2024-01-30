@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   0.main.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 14:27:57 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:45:32 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	ft_validate_alloc(argc, argv, &stack_a);
 	//stack_b = ft_new_node(5);
-	ft_ra(&stack_a);
+	ft_rra(&stack_a);
 	temp = stack_a;
 	while (temp)
 	{
