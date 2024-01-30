@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_arguments.c                               :+:      :+:    :+:   */
+/*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 10:34:24 by matesant         ###   ########.fr       */
+/*   Created: 2024/01/30 14:22:35 by matesant          #+#    #+#             */
+/*   Updated: 2024/01/30 14:24:28 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_push_swap.h"
 
-void	ft_validate_alloc(int argc, char **argv, t_stack **stack_a)
+void	ft_rev_rotate(t_stack **x)
 {
-	int		i;
-	char	**numbers;
+	t_stack	*temp;
+	t_stack	*temp2;
 
-	i = 0;
-	if (argc == 1)
-	{
-		ft_error("Missing arguments");
-	}
-	if (argc > 2)
-	{
-		while (argv[++i])
-			ft_end(stack_a, ft_atoi(argv[i]));
-	}
-	if (argc == 2)
-	{
-		numbers = ft_split(argv[1], ' ');
-		i = 0;
-		while (numbers[i])
-		{
-			ft_end(stack_a, ft_atoi(numbers[i]));
-			i++;
-		}
-		ft_delete_matrice(numbers);
-	}
+	if (!*x || !(*x)->next)
+		return ;
+	temp = *x;
+}
+
+void	ft_rra(t_stack **a)
+{
+	ft_rev_rotate(a);
+	ft_printf("rra\n");
+}
+
+void	ft_rrb(t_stack **b)
+{
+	ft_rev_rotate(b);
+	ft_printf("rrb\n");
+}
+
+void	ft_rrr(t_stack **a, t_stack **b)
+{
+	ft_rev_rotate(a);
+	ft_rev_rotate(b);
+	ft_printf("rrr\n");
 }
