@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 11:49:46 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:19:00 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void				ft_end(t_stack **node, int value);
 void				ft_validate_alloc(int argc, char **argv, t_stack **stack_a);
 int					ft_listsize(t_stack *node);
 void				ft_begin(t_stack **x, int value);
+t_stack				*ft_lstend(t_stack *lst);
 
 // sorting
 void				ft_sort_three(t_stack **a);
@@ -45,5 +46,9 @@ void				ft_pb(t_stack **a, t_stack **b);
 void				ft_ss(t_stack **a, t_stack **b);
 void				ft_sb(t_stack **b);
 void				ft_sa(t_stack **a);
+void				ft_rr(t_stack **a, t_stack **b);
+void				ft_rb(t_stack **b);
+void				ft_ra(t_stack **a);
+void				ft_rotate(t_stack **x);
 
 #endif

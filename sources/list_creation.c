@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:13:17 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 10:41:46 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:18:44 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,13 @@ void	ft_begin(t_stack **x, int value)
 	node->next = *x;
 	node->x = value;
 	*x = node;
+}
+
+t_stack	*ft_lstend(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

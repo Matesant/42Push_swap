@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 11:50:52 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/30 12:05:35 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	ft_validate_alloc(argc, argv, &stack_a);
-	stack_b = ft_new_node(5);
+	//stack_b = ft_new_node(5);
+	ft_ra(&stack_a);
 	temp = stack_a;
 	while (temp)
 	{
