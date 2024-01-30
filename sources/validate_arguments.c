@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/24 16:54:16 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/30 10:34:24 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_validate_alloc(int argc, char **argv, t_stack **stack_a)
 	if (argc > 2)
 	{
 		while (argv[++i])
-			ft_after(stack_a, ft_atoi(argv[i]));
+			ft_end(stack_a, ft_atoi(argv[i]));
 	}
 	if (argc == 2)
 	{
@@ -33,7 +33,7 @@ void	ft_validate_alloc(int argc, char **argv, t_stack **stack_a)
 		i = 0;
 		while (numbers[i])
 		{
-			ft_after(stack_a, ft_atoi(numbers[i]));
+			ft_end(stack_a, ft_atoi(numbers[i]));
 			i++;
 		}
 		ft_delete_matrice(numbers);

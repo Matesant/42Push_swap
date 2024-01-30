@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:02:20 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 11:32:52 by matesant         ###   ########.fr       */
+/*   Created: 2024/01/30 11:39:47 by matesant          #+#    #+#             */
+/*   Updated: 2024/01/30 11:49:05 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_push_swap.h"
 
-void	ft_error(char *str)
-{
-	ft_printf("%s\n", str);
-	exit(0);
-}
-
-void	ft_dealocate(t_stack **node)
+void	ft_swap(t_stack **x)
 {
 	t_stack	*temp;
-	t_stack	*curr;
 
-	curr = *node;
-	while (curr)
+	if (*x && (*x)->next)
 	{
-		temp = curr;
-		curr = curr->next;
-		free(temp);
+		temp = *x;
+		*x = (*x)->next;
+		temp->next = (*x)->next;
+		(*x)->next = temp;
 	}
-	free (curr);
-	*node = NULL;
 }
 
-void	ft_delnode(t_stack **node)
+void	ft_sa(t_stack **a)
 {
-	t_stack	*temp;
+	ft_swap(a);
+	ft_printf("sa\n");
+}
 
-	temp = *node;
-	*node = (*node)->next;
-	free(temp);
+void	ft_sb(t_stack **b)
+{
+	ft_swap(b);
+	ft_printf("sb\n");
+}
+
+void	ft_ss(t_stack **a, t_stack **b)
+{
+	ft_swap(a);
+	ft_swap(b);
+	ft_printf("ss\n");
 }

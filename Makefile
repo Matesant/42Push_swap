@@ -4,8 +4,8 @@ CFLAGS	:= -Wextra -Wall -Werror -g3
 BIN := ./bin/
 SOURCE := ./sources/oi.c ./sources/main.c ./sources/errors.c \
 			./sources/list_creation.c ./sources/validate_arguments.c \
-				./sources/sort_bellow_5.c ./sources/instructions.c \
-					./sources/go_big.c \
+				./sources/sort_bellow_5.c ./sources/push.c \
+					./sources/go_big.c ./sources/swap.c \
 
 HEADER	:= -I ./include/
 
@@ -43,13 +43,13 @@ $(NAME): $(OBJECTS)
 
 clean:
 	@printf "$(RED)Cleaning...$(END)\n"
-	@make -C ./Printf clean --no-print-directory
+	@make -C ./42_libft/Printf clean --no-print-directory
 	@make -C ./42_libft clean --no-print-directory
 	@rm -rf $(BIN)
 
 fclean: clean
 	@printf "$(RED)Cleaning...$(END)\n"
-	@make -C ./Printf --no-print-directory fclean
+	@make -C ./42_libft/Printf --no-print-directory fclean
 	@make -C ./42_libft --no-print-directory fclean
 	@rm -rf $(NAME)
 	@printf "$(GREEN)All cleaned!$(END)\n	"
