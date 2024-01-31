@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 15:33:31 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:36:24 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
 // error handling
 void				ft_error(char *str, t_stack **a, t_stack **b);
 void				ft_dealocate(t_stack **node);
+void				ft_empty(char **str);
 
 // nodes creation
 t_stack				*ft_new_node(int value);

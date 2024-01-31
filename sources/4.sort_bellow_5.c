@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 17:36:39 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 15:18:01 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:28:46 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,11 @@ void	ft_sort_two(t_stack **a)
 
 void	ft_sort_three(t_stack **a)
 {
-	*a = NULL;
+	if ((*a)->x > (*a)->next->x
+		&& (*a)->x > (*a)->next->next->x)
+		ft_ra(a);
+	if ((*a)->next->x > (*a)->next->next->x && (*a)->next->x > (*a)->x)
+		ft_rra(a);
+	if ((*a)->x > (*a)->next->x)
+		ft_sa(a);
 }
