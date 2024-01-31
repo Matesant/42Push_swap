@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 15:34:19 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/31 12:59:39 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ void	ft_call_sort(t_stack **a, t_stack **b)
 	if (len == 2)
 		ft_sort_two(a);
 	else if (len == 3)
-		ft_sort_three(a);
+		return ;
+		//ft_sort_three(a);
 	else
-		ft_sort(a, b);
+		return ;
+		//ft_sort(a, b);
 }
 
 int	main(int argc, char **argv)

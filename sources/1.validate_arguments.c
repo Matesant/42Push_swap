@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 17:02:55 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/31 14:31:44 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,22 @@ void	ft_validate_alloc(int argc, char **argv, t_stack **stack_a)
 	char	*str;
 	int		ki;
 
-	i = 0;
+	i = 1;
 	ki = 0;
+	str = NULL;
 	if (argc == 1)
 		ft_error("Missing arguments", stack_a, NULL);
-	while (argv[++i])
+	while (argv[i])
+	{
 		str = ft_strjoin(str, argv[i]);
-	numbers = ft_split(argv[1], ' ');
-	i = 0;
+		i++;
+	}
+	ft_printf("str = %s\n", str);
+	numbers = ft_split(str, ' ');
 	while (numbers[ki])
-		ft_end(stack_a, ft_atoi(numbers[i++]));
+		ft_end(stack_a, ft_atoi(numbers[ki++]));
 	ft_delete_matrice(numbers);
+	free(str);
 	ft_check_sort(*stack_a);
 }
 

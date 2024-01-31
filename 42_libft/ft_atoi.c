@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 16:22:05 by matesant          #+#    #+#             */
-/*   Updated: 2023/11/13 19:16:58 by matesant         ###   ########.fr       */
+/*   Updated: 2024/01/31 12:44:44 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,13 @@ int	ft_atoi(const char *str)
 	index = 0;
 	numbers = 0;
 	sign = 1;
-	while ((str[index] == ' ') || (str[index] >= 9 && str[index] <= 13))
+	if (!str)
+		return (0);
+	while ((str[index] != '\0' && str[index] == ' ') || (str[index] >= 9
+			&& str[index] <= 13))
 		index++;
+	if (str[index] == '\0')
+		return (0);
 	if (str[index] == '-' || str[index] == '+')
 	{
 		if (str[index] == '-')
