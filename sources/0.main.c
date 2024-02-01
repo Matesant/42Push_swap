@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/31 18:55:06 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/01 12:21:51 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	//ft_empty(argv);
+	ft_empty(argv);
+	ft_check_character(argv);
 	stack_a = NULL;
 	stack_b = NULL;
 	ft_validate_alloc(argc, argv, &stack_a);

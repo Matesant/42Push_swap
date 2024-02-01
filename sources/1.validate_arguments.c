@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/31 18:38:27 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/01 12:22:30 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,26 @@ void	ft_empty(char **str)
 	k = 0;
 	while (str[i])
 	{
+		if (str[i][0] == '\0')
+			ft_easy_error("Error");
+		i++;
+	}
+}
+
+void	ft_check_character(char **str)
+{
+	int	i;
+	int	k;
+
+	i = 0;
+	while (str[i])
+	{
+		k = 0;
 		while (str[i][k])
 		{
-			if (str[i][k] == '\0')
-			{
-				ft_printf("Error");
-				exit(1);
-			}
+			if (ft_isdigit(str[i][k]) == 0 && ft_issignal(&str[i][k]) == 0
+				&& ft_isspace(str[i][k]) == 0)
+				ft_easy_error("Error");
 			k++;
 		}
 		i++;
