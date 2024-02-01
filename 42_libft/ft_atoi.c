@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 16:22:05 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/31 12:44:44 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:24:11 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,29 @@
 
 int	ft_atoi(const char *str)
 {
-	int	index;
+	int	i;
 	int	sign;
 	int	numbers;
 
-	index = 0;
+	i = 0;
 	numbers = 0;
 	sign = 1;
 	if (!str)
 		return (0);
-	while ((str[index] != '\0' && str[index] == ' ') || (str[index] >= 9
-			&& str[index] <= 13))
-		index++;
-	if (str[index] == '\0')
+	while ((str[i] && str[i] == ' ') || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '\0')
 		return (0);
-	if (str[index] == '-' || str[index] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[index] == '-')
+		if (str[i] == '-')
 			sign *= -1;
-		index++;
+		i++;
 	}
-	while (str[index] >= '0' && str[index] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		numbers = numbers * 10 + (str[index] - '0');
-		index++;
+		numbers = numbers * 10 + (str[i] - '0');
+		i++;
 	}
 	return (numbers * sign);
 }

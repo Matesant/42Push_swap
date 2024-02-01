@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/01 12:22:30 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/01 15:30:59 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_validate_alloc(int argc, char **argv, t_stack **stack_a)
 	char	*str;
 	int		ki;
 
-	i = 1;
+	i = 0;
 	ki = 0;
 	str = NULL;
 	if (argc == 1)
@@ -32,6 +32,8 @@ void	ft_validate_alloc(int argc, char **argv, t_stack **stack_a)
 		i++;
 	}
 	numbers = ft_split(str, ' ');
+	if (numbers == NULL)
+		ft_error("Error\n", stack_a, NULL);
 	while (numbers[ki])
 		ft_end(stack_a, ft_atoi(numbers[ki++]));
 	ft_delete_matrice(numbers);
@@ -67,31 +69,30 @@ void	ft_empty(char **str)
 	int	i;
 	int	k;
 
-	i = 0;
+	i = 1;
 	k = 0;
 	while (str[i])
 	{
 		if (str[i][0] == '\0')
-			ft_easy_error("Error");
+			ft_easy_error("Error\n");
 		i++;
 	}
 }
 
-void	ft_check_character(char **str)
+void	ft_ischaracter(char **str)
 {
 	int	i;
-	int	k;
+	int	j;
 
 	i = 0;
 	while (str[i])
 	{
-		k = 0;
-		while (str[i][k])
+		j = 0;
+		while (str[i][j])
 		{
-			if (ft_isdigit(str[i][k]) == 0 && ft_issignal(&str[i][k]) == 0
-				&& ft_isspace(str[i][k]) == 0)
-				ft_easy_error("Error");
-			k++;
+			if (!ft_isdigit(str[i][j]) && (!ft_isspace(str[i][j])))
+				ft_easy_error("Error\n");
+			j++;
 		}
 		i++;
 	}
