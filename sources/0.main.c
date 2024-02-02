@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/02 11:10:06 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:25:13 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ void	ft_call_sort(t_stack **a, t_stack **b)
 		ft_sort_two(a);
 	else if (len == 3)
 		ft_sort_three(a);
+	else if (len < 80)
+		ft_sort_until_50(a, b);
 	else
-		ft_sort(a, b);
+		ft_error("Error", a, b);
 }
 
 void	ft_same_digit(t_stack **a)
@@ -49,13 +51,20 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	t_stack	*temp;
 
-	ft_empty(++argv);
-	ft_ischaracter(argv);
+	ft_ischaracter(++argv);
+	ft_empty(argv);
 	stack_a = NULL;
 	stack_b = NULL;
 	ft_validate_alloc(argc, argv, &stack_a);
 	ft_same_digit(&stack_a);
+	temp = stack_a;
+	//while (temp)
+	//{
+	//	ft_printf("%d\n", temp->x);
+	//	temp = temp->next;
+	//}
 	ft_call_sort(&stack_a, &stack_b);
 	ft_error("ALL right", &stack_a, &stack_b);
 	return (0);

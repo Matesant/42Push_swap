@@ -6,49 +6,75 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 17:38:25 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/31 19:27:32 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:16:39 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_push_swap.h"
 
-void	ft_sort(t_stack **a, t_stack **b)
+int		ft_search(t_stack *a);
+
+void	ft_adjust_stack_a(t_stack **a, t_stack **b, int i, t_stack *temp)
 {
-	int		temp;
+	int	counter;
+
+	while (temp)
+	{
+		i = ft_listsize(temp);
+		counter = ft_search(temp);
+		if (counter > (i / 2))
+			counter = (i - counter) * -1;
+		if (counter < 0)
+			while (counter++ < 0)
+				ft_rra(a);
+		else
+			while (counter-- > 0)
+				ft_ra(a);
+		if (i != 3)
+			ft_pb(a, b);
+		else
+			break ;
+		temp = *a;
+	}
+}
+
+void	ft_sort_remaining(t_stack **a, t_stack **b)
+{
+	while (*b)
+		ft_pa(a, b);
+}
+
+void	ft_sort_until_50(t_stack **a, t_stack **b)
+{
 	int		i;
-	int		j;
+	t_stack	*temp;
 
 	i = 0;
-	if (*b == NULL)
-		ft_pb(a, b);
-	while (i < 10)
+	temp = *a;
+	ft_adjust_stack_a(a, b, i, temp);
+	ft_sort_three(a);
+	ft_sort_remaining(a, b);
+}
+
+int	ft_search(t_stack *a)
+{
+	int		temp;
+	int		counter;
+	t_stack	*temp2;
+
+	temp2 = a;
+	temp = a->x;
+	counter = 0;
+	while (a)
 	{
-		j = 0;
-		temp = 0;
-		if ((*a)->x > (*b)->x)
-			ft_pb(a, b);
-		while (*a)
-		{
-			ft_printf("%d", (*a)->x);
-			ft_pb(a, b);
-			*a = (*a)->next;
-		}
-		temp = (*a)->x;
-		while (temp < (*b)->x)
-		{
-			ft_pa(b, a);
-			ft_printf("%d", (*b)->x);
-		}
+		if (temp > a->x)
+			temp = a->x;
+		a = a->next;
 	}
-	while (temp != (*a)->x)
+	while (temp2->x != temp)
 	{
-		ft_ra(a);
-		j++;
+		temp2 = temp2->next;
+		counter++;
 	}
-	while (j)
-	{
-		ft_rra(a);
-		j--;
-	}
-	i++;
+	return (counter);
 }

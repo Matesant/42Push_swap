@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/02 11:08:39 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:16:13 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_stack
 {
 	int				x;
 	struct s_stack	*next;
+	int				size;
 }					t_stack;
 
 // error handling
@@ -42,7 +43,8 @@ t_stack				*ft_lstend2(t_stack *lst);
 // sorting
 void				ft_sort_three(t_stack **a);
 void				ft_sort_two(t_stack **a);
-void				ft_sort(t_stack **a, t_stack **b);
+void				ft_sort_until_50(t_stack **a, t_stack **b);
+int					ft_check_sort(t_stack *a);
 
 // instructions
 void				ft_pa(t_stack **a, t_stack **b);
