@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/02 16:16:13 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:27:24 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_stack
 {
 	int				x;
 	struct s_stack	*next;
-	int				size;
+	int				index;
 }					t_stack;
 
 // error handling

@@ -5,7 +5,8 @@ BIN := ./bin/
 SOURCE := ./sources/oi.c ./sources/0.main.c ./sources/9.errors.c \
 			./sources/2.list_creation.c ./sources/1.validate_arguments.c \
 				./sources/4.sort_bellow_5.c ./sources/3.push.c \
-					./sources/4.go_big.c ./sources/3.swap.c ./sources/3.rotate.c  ./sources/3.rev_rotate.c\
+					./sources/4.go_big.c ./sources/3.swap.c ./sources/3.rotate.c  ./sources/3.rev_rotate.c \
+						./sources/4.until_80.c \
 
 HEADER	:= -I ./include/
 
