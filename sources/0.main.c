@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/01 16:05:46 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/02 11:10:06 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,25 @@ void	ft_call_sort(t_stack **a, t_stack **b)
 		ft_sort(a, b);
 }
 
+void	ft_same_digit(t_stack **a)
+{
+	t_stack	*temp;
+	t_stack	*temp2;
+
+	temp = *a;
+	while (temp)
+	{
+		temp2 = temp->next;
+		while (temp2)
+		{
+			if (temp->x == temp2->x)
+				ft_error("Error", a, NULL);
+			temp2 = temp2->next;
+		}
+		temp = temp->next;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -36,6 +55,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	ft_validate_alloc(argc, argv, &stack_a);
+	ft_same_digit(&stack_a);
 	ft_call_sort(&stack_a, &stack_b);
 	ft_error("ALL right", &stack_a, &stack_b);
 	return (0);
