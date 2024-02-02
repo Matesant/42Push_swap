@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/02 16:25:13 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/02 17:14:31 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,6 @@ int	main(int argc, char **argv)
 	ft_validate_alloc(argc, argv, &stack_a);
 	ft_same_digit(&stack_a);
 	temp = stack_a;
-	//while (temp)
-	//{
-	//	ft_printf("%d\n", temp->x);
-	//	temp = temp->next;
-	//}
 	ft_call_sort(&stack_a, &stack_b);
-	ft_error("ALL right", &stack_a, &stack_b);
 	return (0);
 }
