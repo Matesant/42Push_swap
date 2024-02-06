@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/06 12:17:15 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/06 16:58:20 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,15 @@ t_stack				*ft_lstend2(t_stack *lst);
 // sorting
 void				ft_sort_three(t_stack **a);
 void				ft_sort_two(t_stack **a);
-void				ft_sort_until_50(t_stack **a, t_stack **b);
+void				ft_below_fifty(t_stack **a, t_stack **b);
 int					ft_check_sort(t_stack *a);
+void				ft_go_big(t_stack **a, t_stack **b, int i);
+void				ft_test(t_stack **a, t_stack **b);
+
+// index creation
+void				ft_create_index(t_stack **a, int *tab);
+void				ft_bubble_sort(int *tab, int size);
+void				list_to_tab(t_stack *a, int *tab);
 
 // instructions
 void				ft_pa(t_stack **a, t_stack **b);

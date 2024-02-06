@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   4.go_big.c                                         :+:      :+:    :+:   */
+/*   4.until_eighty.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 17:38:25 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/02 16:16:39 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/06 16:26:22 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,7 @@ void	ft_adjust_stack_a(t_stack **a, t_stack **b, int i, t_stack *temp)
 	}
 }
 
-void	ft_sort_remaining(t_stack **a, t_stack **b)
-{
-	while (*b)
-		ft_pa(a, b);
-}
-
-void	ft_sort_until_50(t_stack **a, t_stack **b)
+void	ft_below_fifty(t_stack **a, t_stack **b)
 {
 	int		i;
 	t_stack	*temp;
@@ -53,7 +47,8 @@ void	ft_sort_until_50(t_stack **a, t_stack **b)
 	temp = *a;
 	ft_adjust_stack_a(a, b, i, temp);
 	ft_sort_three(a);
-	ft_sort_remaining(a, b);
+	while (*b)
+		ft_pa(a, b);
 }
 
 int	ft_search(t_stack *a)
@@ -78,3 +73,4 @@ int	ft_search(t_stack *a)
 	}
 	return (counter);
 }
+
