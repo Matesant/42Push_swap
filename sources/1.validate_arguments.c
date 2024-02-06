@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/06 11:25:24 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/06 12:16:58 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@ void	ft_validate_alloc(int argc, char **argv, t_stack **stack_a)
 		i++;
 	}
 	numbers = ft_split(str, ' ');
+	ft_check_max(numbers, str);
 	if (numbers == NULL)
 		ft_error("Error\n", stack_a, NULL);
 	while (numbers[ki])
-		ft_end(stack_a, ft_atol(numbers[ki++]));
+		ft_end(stack_a, ft_atoi(numbers[ki++]));
 	ft_delete_matrice(numbers);
 	free(str);
 	if (ft_check_sort(*stack_a) == 1)

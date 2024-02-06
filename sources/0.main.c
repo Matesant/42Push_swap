@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/06 11:37:17 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/06 12:15:43 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ft_call_sort(t_stack **a, t_stack **b)
 	else
 		ft_error("Error", a, b);
 }
+
 
 void	ft_same_digit(t_stack **a)
 {

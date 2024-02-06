@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 14:52:28 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/06 11:45:21 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/06 12:15:26 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 void				ft_delete_matrice(char **matrice);
 int					ft_isspace(int c);
 int					ft_issignal(char str);
+long				ft_atol(const char *str);
 
 #endif
