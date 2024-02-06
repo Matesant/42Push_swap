@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:09:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/06 17:02:20 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:01:24 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,33 @@ void	ft_go_big(t_stack **a, t_stack **b, int i)
 	}
 }
 
+void	ft_first_pb(t_stack **a, t_stack **b)
+{
+	int		i;
+	t_stack	*temp;
+
+	i = (ft_listsize(*a)) / 2 + 1;
+	temp = *a;
+	while (ft_listsize(*a) > i)
+	{
+		if (temp->index < i)
+			ft_pb(a, b);
+		else
+			ft_ra(a);
+		temp = *a;
+	}
+	while (*a)
+	{
+		if (ft_listsize(*a) == 3)
+		{
+			ft_sort_three(a);
+			break ;
+		}
+		else
+			ft_pb(a, b);
+	}
+}
+
 void	ft_test(t_stack **a, t_stack **b)
 {
 	int	i;
@@ -41,7 +68,8 @@ void	ft_test(t_stack **a, t_stack **b)
 	list_to_tab(*a, tab);
 	ft_bubble_sort(tab, ft_listsize(*a));
 	ft_create_index(a, tab);
-	ft_go_big(a, b, i);
-	ft_sort_three(a);
+	ft_first_pb(a, b);
+	// ft_go_big(a, b, i);
+	//ft_sort_three(a);
 	// ft_sort_remaining(a, b);
 }
