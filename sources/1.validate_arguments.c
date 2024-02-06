@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/02 12:23:09 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/06 11:25:24 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_validate_alloc(int argc, char **argv, t_stack **stack_a)
 	if (numbers == NULL)
 		ft_error("Error\n", stack_a, NULL);
 	while (numbers[ki])
-		ft_end(stack_a, ft_atoi(numbers[ki++]));
+		ft_end(stack_a, ft_atol(numbers[ki++]));
 	ft_delete_matrice(numbers);
 	free(str);
 	if (ft_check_sort(*stack_a) == 1)
@@ -70,19 +70,21 @@ void	ft_empty(char **str)
 	int	k;
 
 	i = 0;
-	if ((!str))
-		ft_easy_error("Error\n");
 	while (str[i])
 	{
+		if ((!str) || (str[i][0] == '\0'))
+			ft_easy_error("Error\n");
 		k = 0;
 		while (str[i][k])
 		{
-			if (str[i][k] != ' ')
+			if (str[i][k] != ' ' && str[i][k] != '+' && str[i][k] != '-')
 			{
 				k++;
 				continue ;
 			}
 			if (str[i][k] == ' ' && str[i][k + 1] == '\0')
+				ft_easy_error("Error\n");
+			if ((str[i][k] == '-' || str[i][k] == '+') && str[i][k + 1] == '\0')
 				ft_easy_error("Error\n");
 			k++;
 		}

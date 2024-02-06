@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/02 17:14:31 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/06 11:37:17 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	ft_same_digit(t_stack **a)
 		temp2 = temp->next;
 		while (temp2)
 		{
+			if (temp->x > INT_MAX || temp->x < INT_MIN)
+				ft_error("Error", a, NULL);
 			if (temp->x == temp2->x)
 				ft_error("Error", a, NULL);
 			temp2 = temp2->next;
@@ -51,7 +53,6 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	t_stack	*temp;
 
 	ft_ischaracter(++argv);
 	ft_empty(argv);
@@ -59,7 +60,6 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	ft_validate_alloc(argc, argv, &stack_a);
 	ft_same_digit(&stack_a);
-	temp = stack_a;
 	ft_call_sort(&stack_a, &stack_b);
 	return (0);
 }

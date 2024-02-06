@@ -6,7 +6,9 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:09:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/02 17:09:58 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/06 10:56:28 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../include/ft_push_swap.h"
 

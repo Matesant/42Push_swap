@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/02 16:27:24 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/06 11:45:44 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 
 # include "../42_libft/Printf/ft_printf.h"
 # include "../42_libft/libft.h"
+# include <stdio.h>
 # include <stdlib.h>
+
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 typedef struct s_stack
 {
-	int				x;
+	long			x;
 	struct s_stack	*next;
 	int				index;
 }					t_stack;
@@ -30,6 +34,7 @@ void				ft_dealocate(t_stack **node);
 void				ft_empty(char **str);
 void				ft_easy_error(char *str);
 void				ft_ischaracter(char **str);
+long				ft_atol(const char *str);
 
 // nodes creation
 t_stack				*ft_new_node(int value);

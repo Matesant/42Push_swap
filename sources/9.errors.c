@@ -6,13 +6,20 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:02:20 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/02 11:45:24 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/06 11:48:51 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_push_swap.h"
 
-void	ft_dealocate(t_stack **node);
+typedef struct s_atol
+{
+	int		i;
+	long	sign;
+	long	numbers;
+}			t_atol;
+
+void		ft_dealocate(t_stack **node);
 
 void	ft_easy_error(char *str)
 {
@@ -64,4 +71,32 @@ void	ft_delnode(t_stack **node)
 	temp = *node;
 	*node = (*node)->next;
 	free(temp);
+}
+
+long	ft_atol(const char *str)
+{
+	t_atol	at;
+
+	at.i = 0;
+	at.numbers = 0;
+	at.sign = 1;
+	while ((str[at.i] && str[at.i] == ' ') || (str[at.i] >= 9
+			&& str[at.i] <= 13))
+		at.i++;
+	if (str[at.i] == '\0')
+		return (0);
+	if (str[at.i] == '-' || str[at.i] == '+')
+	{
+		if (str[at.i] == '-')
+			at.sign *= -1;
+		at.i++;
+	}
+	while (str[at.i] >= '0' && str[at.i] <= '9')
+	{
+		at.numbers = at.numbers * 10 + (str[at.i] - '0');
+		at.i++;
+	}
+	if (at.numbers > 2147483647 || at.numbers < -2147483648)
+		ft_error("Error", NULL, NULL);
+	return (at.numbers * at.sign);
 }
