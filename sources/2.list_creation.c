@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_creation.c                                    :+:      :+:    :+:   */
+/*   2.list_creation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:13:17 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 14:18:44 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/07 12:02:42 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ t_stack	*ft_new_node(int value)
 	t_stack	*node;
 
 	node = malloc(sizeof(t_stack));
+	ft_bzero(node, sizeof(t_stack));
 	node->x = value;
-	node->next = NULL;
 	return (node);
 }
 

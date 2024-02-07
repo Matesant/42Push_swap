@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/06 18:58:54 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:02:32 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ void	ft_call_sort(t_stack **a, t_stack **b)
 	else if (len < 5)
 		ft_below_fifty(a, b);
 	else
-		ft_test(a, b);
+		ft_go_big(a, b);
 }
-
 
 void	ft_same_digit(t_stack **a)
 {
@@ -50,6 +49,21 @@ void	ft_same_digit(t_stack **a)
 	}
 }
 
+void	ft_print_stack(t_stack *b)
+{
+	while (b)
+	{
+		printf("\t-------------------------------\n");
+		printf("\t\tNumber: %d\n", b->x);
+		printf("\t\tIndex: %d\n", b->index);
+		printf("\t\ttarget pos: %d\n", b->target_pos);
+		printf("\t\tpos: %d\n", b->position);
+		printf("\t\tcost_a: %d\n", b->cost_a);
+		printf("\t\tcost_b: %d\n", b->cost_b);
+		b = b->next;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -62,5 +76,10 @@ int	main(int argc, char **argv)
 	ft_validate_alloc(argc, argv, &stack_a);
 	ft_same_digit(&stack_a);
 	ft_call_sort(&stack_a, &stack_b);
+	printf("\t\tstack_a:\n");
+	ft_print_stack(stack_a);
+	printf("\v\v\t\tstack_b:\n");
+	ft_print_stack(stack_b);
+	printf("min index position: %d\n", ft_get_min(&stack_a));
 	return (0);
 }

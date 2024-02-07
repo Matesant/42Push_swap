@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/06 19:29:08 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:48:19 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct s_stack
 	int				index;
 	int				position;
 	int				target_pos;
+	int				cost_a;
+	int				cost_b;
 }					t_stack;
 
 // error handling
@@ -52,13 +54,20 @@ void				ft_sort_three(t_stack **a);
 void				ft_sort_two(t_stack **a);
 void				ft_below_fifty(t_stack **a, t_stack **b);
 int					ft_check_sort(t_stack *a);
-void				ft_go_big(t_stack **a, t_stack **b, int i);
-void				ft_test(t_stack **a, t_stack **b);
+void				ft_go_big(t_stack **a, t_stack **b);
+int					ft_get_min(t_stack **a);
 
 // index creation
-void				ft_create_index(t_stack **a, int *tab);
+void				ft_create_index(t_stack *a, int *tab);
 void				ft_bubble_sort(int *tab, int size);
 void				list_to_tab(t_stack *a, int *tab);
+
+// weights
+void				ft_get_positions(t_stack **a, t_stack **b);
+int					ft_get_target(t_stack *a, int b_index);
+void				ft_get_costs(t_stack *a, t_stack *b);
+void				ft_update_target_pos(t_stack *a, t_stack *b);
+void				ft_real_math(t_stack **a, t_stack **b);
 
 // instructions
 void				ft_pa(t_stack **a, t_stack **b);
@@ -73,4 +82,5 @@ void				ft_rrb(t_stack **b);
 void				ft_rra(t_stack **a);
 void				ft_rrr(t_stack **a, t_stack **b);
 
+void				ft_print_stack(t_stack *b);
 #endif
