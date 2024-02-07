@@ -6,30 +6,30 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:34:04 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/07 16:57:18 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:53:03 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_push_swap.h"
 
-t_stack	*ft_get_cheapest(t_stack **b)
+t_stack	*ft_get_cheapest(t_stack *b)
 {
 	int		current;
 	int		cheapest;
-	t_stack	*temp;
 	t_stack	*good_node;
 
+	good_node = NULL;
 	current = INT_MAX;
 	cheapest = INT_MIN;
-	while (temp)
+	while (b)
 	{
-		current = ft_abs(temp->cost_a) + ft_abs(temp->cost_b);
+		current = ft_abs(b->cost_a) + ft_abs(b->cost_b);
 		if (current < cheapest)
 		{
 			cheapest = current;
-			good_node = temp;
+			good_node = b;
 		}
-		temp = temp->next;
+		b = b->next;
 	}
 	return (good_node);
 }
@@ -45,7 +45,7 @@ void	ft_move_both(t_stack **a, t_stack **b, t_stack *cheap)
 			ft_rrr(a, b);
 		}
 	}
-	else if (cheap->cost_a > 0 && cheap->cost_b > 0)
+	if (cheap->cost_a > 0 && cheap->cost_b > 0)
 	{
 		while (cheap->cost_a && cheap->cost_b)
 		{
@@ -56,13 +56,54 @@ void	ft_move_both(t_stack **a, t_stack **b, t_stack *cheap)
 	}
 }
 
+void	ft_move_a(t_stack **a, t_stack *cheap)
+{
+	if (cheap->cost_a < 0)
+	{
+		while (cheap->cost_a)
+		{
+			cheap->cost_a++;
+			ft_rra(a);
+		}
+	}
+	if (cheap->cost_a > 0)
+	{
+		while (cheap->cost_a)
+		{
+			cheap->cost_a--;
+			ft_ra(a);
+		}
+	}
+}
+
+void	ft_move_b(t_stack **b, t_stack *cheap)
+{
+	if (cheap->cost_b < 0)
+	{
+		while (cheap->cost_b)
+		{
+			cheap->cost_a++;
+			ft_rrb(b);
+		}
+	}
+	if (cheap->cost_b > 0)
+	{
+		while (cheap->cost_b)
+		{
+			cheap->cost_b--;
+			ft_rb(b);
+		}
+	}
+}
+
 void	ft_real_math(t_stack **a, t_stack **b)
 {
 	t_stack	*cheapest;
 
-	cheapest = ft_get_cheapest(b);
+	cheapest = NULL;
+	cheapest = ft_get_cheapest(*b);
 	ft_move_both(a, b, cheapest);
-	// ft_move_a(a, cheapest);
-	// ft_move_b(b, cheapest);
+	ft_move_a(a, cheapest);
+	ft_move_b(b, cheapest);
 	ft_pa(a, b);
 }

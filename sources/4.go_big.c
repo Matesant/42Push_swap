@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:09:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/07 16:51:21 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:50:41 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	ft_sort_remaining(t_stack *a, t_stack *b)
 		ft_update_target_pos(a, b);
 		ft_get_costs(a, b);
 		ft_real_math(&a, &b);
-		temp = temp->next;
 	}
 }
 
@@ -67,4 +66,5 @@ void	ft_go_big(t_stack **a, t_stack **b)
 	ft_create_index(*a, tab);
 	ft_first_pb(a, b);
 	ft_sort_remaining(*a, *b);
+	free(tab);
 }

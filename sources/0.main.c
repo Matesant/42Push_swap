@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/07 16:02:32 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:49:16 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_same_digit(t_stack **a)
 	}
 }
 
+
 void	ft_print_stack(t_stack *b)
 {
 	while (b)
@@ -76,10 +77,11 @@ int	main(int argc, char **argv)
 	ft_validate_alloc(argc, argv, &stack_a);
 	ft_same_digit(&stack_a);
 	ft_call_sort(&stack_a, &stack_b);
-	printf("\t\tstack_a:\n");
-	ft_print_stack(stack_a);
-	printf("\v\v\t\tstack_b:\n");
-	ft_print_stack(stack_b);
-	printf("min index position: %d\n", ft_get_min(&stack_a));
+	//printf("\t\tstack_a:\n");
+	//ft_print_stack(stack_a);
+	//printf("\v\v\t\tstack_b:\n");
+	//ft_print_stack(stack_b);
+	//printf("min index position: %d\n", ft_get_min(&stack_a));
+	ft_error(NULL, &stack_a, &stack_b);
 	return (0);
 }
