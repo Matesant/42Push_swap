@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:02:20 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/06 12:18:02 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:18:16 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	ft_delnode(t_stack **node)
 	*node = (*node)->next;
 	free(temp);
 }
+
 void	ft_check_max(char **numbers, char *str)
 {
 	int	i;

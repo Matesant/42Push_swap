@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 16:52:59 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/07 15:38:18 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:18:03 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,3 @@ int	ft_get_min(t_stack **a)
 	}
 	return (position);
 }
-

@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:34:04 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/07 17:53:03 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:50:41 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_stack	*ft_get_cheapest(t_stack *b)
 
 	good_node = NULL;
 	current = INT_MAX;
-	cheapest = INT_MIN;
+	cheapest = INT_MAX;
 	while (b)
 	{
 		current = ft_abs(b->cost_a) + ft_abs(b->cost_b);
@@ -82,7 +82,7 @@ void	ft_move_b(t_stack **b, t_stack *cheap)
 	{
 		while (cheap->cost_b)
 		{
-			cheap->cost_a++;
+			cheap->cost_b++;
 			ft_rrb(b);
 		}
 	}
@@ -100,7 +100,6 @@ void	ft_real_math(t_stack **a, t_stack **b)
 {
 	t_stack	*cheapest;
 
-	cheapest = NULL;
 	cheapest = ft_get_cheapest(*b);
 	ft_move_both(a, b, cheapest);
 	ft_move_a(a, cheapest);

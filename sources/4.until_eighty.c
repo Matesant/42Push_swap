@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 17:38:25 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/06 16:26:22 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:15:57 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,3 @@ int	ft_search(t_stack *a)
 	}
 	return (counter);
 }
-

@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/07 17:38:10 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:50:56 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void				ft_below_fifty(t_stack **a, t_stack **b);
 int					ft_check_sort(t_stack *a);
 void				ft_go_big(t_stack **a, t_stack **b);
 int					ft_get_min(t_stack **a);
+void				ft_swift(t_stack **a);
 
 // index creation
 void				ft_create_index(t_stack *a, int *tab);

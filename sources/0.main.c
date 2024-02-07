@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/07 17:49:16 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:57:49 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_call_sort(t_stack **a, t_stack **b)
 		ft_sort_two(a);
 	else if (len == 3)
 		ft_sort_three(a);
-	else if (len < 5)
+	else if (len < 50)
 		ft_below_fifty(a, b);
 	else
 		ft_go_big(a, b);
@@ -49,19 +49,23 @@ void	ft_same_digit(t_stack **a)
 	}
 }
 
-
-void	ft_print_stack(t_stack *b)
+void	ft_swift(t_stack **a)
 {
-	while (b)
+	int	small;
+	int	size;
+
+	small = 0;
+	size = ft_listsize(*a) / 2;
+	while (1)
 	{
-		printf("\t-------------------------------\n");
-		printf("\t\tNumber: %d\n", b->x);
-		printf("\t\tIndex: %d\n", b->index);
-		printf("\t\ttarget pos: %d\n", b->target_pos);
-		printf("\t\tpos: %d\n", b->position);
-		printf("\t\tcost_a: %d\n", b->cost_a);
-		printf("\t\tcost_b: %d\n", b->cost_b);
-		b = b->next;
+		small = ft_get_min(a);
+		if (small == 0)
+			return ;
+		if (small < size)
+			ft_ra(a);
+		else
+			ft_rra(a);
+		ft_get_positions(a, NULL);
 	}
 }
 
@@ -77,11 +81,6 @@ int	main(int argc, char **argv)
 	ft_validate_alloc(argc, argv, &stack_a);
 	ft_same_digit(&stack_a);
 	ft_call_sort(&stack_a, &stack_b);
-	//printf("\t\tstack_a:\n");
-	//ft_print_stack(stack_a);
-	//printf("\v\v\t\tstack_b:\n");
-	//ft_print_stack(stack_b);
-	//printf("min index position: %d\n", ft_get_min(&stack_a));
 	ft_error(NULL, &stack_a, &stack_b);
 	return (0);
 }
