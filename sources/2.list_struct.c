@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 17:23:23 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/08 18:33:58 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:37:04 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,19 @@ void	ft_is_only_space(char *str)
 		i++;
 	}
 	ft_error("Error", NULL, NULL);
+}
+
+void	ft_out_of_order_signals(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '-' && (str[i + 1] < '0' || str[i + 1] > '9'))
+			ft_error("Error", NULL, NULL);
+		if (str[i] == '+' && (str[i + 1] < '0' || str[i + 1] > '9'))
+			ft_error("Error", NULL, NULL);
+		i++;
+	}
 }
