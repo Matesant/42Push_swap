@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   2.list_&_struct.c                                  :+:      :+:    :+:   */
+/*   2.list_struct.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 17:23:23 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/08 17:28:49 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:33:58 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,18 @@ t_stack	*ft_lstend2(t_stack *lst)
 	while (lst->next->next)
 		lst = lst->next;
 	return (lst);
+}
+
+void	ft_is_only_space(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ' || str[i] >= 9 || str[i] <= 13)
+			return ;
+		i++;
+	}
+	ft_error("Error", NULL, NULL);
 }

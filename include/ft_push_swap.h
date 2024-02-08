@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/08 17:41:04 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:33:03 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void				ft_easy_error(char *str);
 void				ft_ischaracter(char **str);
 void				ft_check_max(char **numbers, char *str);
 void				ft_same_digit(t_stack **a);
+void				ft_is_only_space(char *str);
 
 // nodes creation
 t_stack				*ft_new_node(int value);

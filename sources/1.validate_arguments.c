@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/08 17:40:55 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:32:06 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,12 @@ void	ft_empty(char **str)
 		k = 0;
 		while (str[i][k])
 		{
+			ft_is_only_space(str[i]);
 			if (str[i][k] != ' ' && str[i][k] != '+' && str[i][k] != '-')
 			{
 				k++;
 				continue ;
 			}
-			if (str[i][k] == ' ' && str[i][k + 1] == '\0')
-				ft_easy_error("Error\n");
 			if ((str[i][k] == '-' || str[i][k] == '+') && str[i][k + 1] == '\0')
 				ft_easy_error("Error\n");
 			k++;
