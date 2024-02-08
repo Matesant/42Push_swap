@@ -2,12 +2,12 @@ CC := cc
 NAME := push_swap
 CFLAGS	:= -Wall -Werror -Wextra -g3
 BIN := ./bin/
-SOURCE := ./sources/0.main.c ./sources/9.errors.c \
-			./sources/2.list_creation.c ./sources/1.validate_arguments.c \
-				./sources/4.go_big.c ./sources/3.push.c ./sources/3.swap.c \
-					./sources/3.rotate.c  ./sources/3.rev_rotate.c \
-						./sources/4.go_small.c ./sources/8.utils.c ./sources/5.costs_target.c \
-							./sources/7.real_matematic.c ./sources/2.list_struct.c\
+SOURCE := ./mandatory/0.main.c ./mandatory/9.errors.c \
+			./mandatory/2.list_creation.c ./mandatory/1.validate_arguments.c \
+				./mandatory/4.go_big.c ./mandatory/3.push.c ./mandatory/3.swap.c \
+					./mandatory/3.rotate.c  ./mandatory/3.rev_rotate.c \
+						./mandatory/4.go_small.c ./mandatory/8.utils.c ./mandatory/5.costs_target.c \
+							./mandatory/7.real_matematic.c ./mandatory/2.list_struct.c\
 
 HEADER	:= -I ./include/
 

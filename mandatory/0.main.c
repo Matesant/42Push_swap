@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/08 17:40:48 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:48:52 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 
 	if (argc == 1)
-		ft_error("Missing arguments", &stack_a, NULL);
+		ft_error("Missing arguments", NULL, NULL);
 	ft_init_struct();
 	ft_ischaracter(++argv);
 	ft_empty(argv);
