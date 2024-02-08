@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:09:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/07 19:52:57 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:32:38 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,26 @@ void	ft_first_pb(t_stack **a, t_stack **b)
 		}
 		else
 			ft_pb(a, b);
+	}
+}
+
+void	ft_swift(t_stack **a)
+{
+	int	small;
+	int	size;
+
+	small = 0;
+	size = ft_listsize(*a) / 2;
+	while (1)
+	{
+		small = ft_get_min(a);
+		if (small == 0)
+			return ;
+		if (small < size)
+			ft_ra(a);
+		else
+			ft_rra(a);
+		ft_get_positions(a, NULL);
 	}
 }
 

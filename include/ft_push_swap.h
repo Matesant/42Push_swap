@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/07 19:50:56 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:33:31 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,18 @@ typedef struct s_stack
 	int				cost_b;
 }					t_stack;
 
+typedef struct s_values
+{
+	int				i;
+	char			**numbers;
+	char			*str;
+	int				ki;
+}					t_values;
+
+// structs
+void				ft_init_struct(void);
+t_values			*ft_values(void);
+
 // error handling
 void				ft_error(char *str, t_stack **a, t_stack **b);
 void				ft_dealocate(t_stack **node);
@@ -39,6 +51,7 @@ void				ft_empty(char **str);
 void				ft_easy_error(char *str);
 void				ft_ischaracter(char **str);
 void				ft_check_max(char **numbers, char *str);
+void				ft_same_digit(t_stack **a);
 
 // nodes creation
 t_stack				*ft_new_node(int value);
@@ -48,6 +61,7 @@ int					ft_listsize(t_stack *node);
 void				ft_begin(t_stack **x, int value);
 t_stack				*ft_lstend(t_stack *lst);
 t_stack				*ft_lstend2(t_stack *lst);
+void				ft_strip(char *str);
 
 // sorting
 void				ft_sort_three(t_stack **a);

@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/06 12:16:58 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:33:00 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,40 +16,45 @@ int		ft_check_sort(t_stack *a);
 
 void	ft_validate_alloc(int argc, char **argv, t_stack **stack_a)
 {
-	int		i;
-	char	**numbers;
-	char	*str;
-	int		ki;
-
-	i = 0;
-	ki = 0;
-	str = NULL;
+	ft_values()->str = NULL;
 	if (argc == 1)
 		ft_error("Missing arguments", stack_a, NULL);
-	while (argv[i])
+	while (argv[ft_values()->i])
 	{
-		str = ft_strjoin(str, argv[i]);
-		i++;
+		ft_values()->str = ft_strjoin(ft_values()->str, argv[ft_values()->i]);
+		ft_values()->i++;
 	}
-	numbers = ft_split(str, ' ');
-	ft_check_max(numbers, str);
-	if (numbers == NULL)
+	ft_values()->numbers = ft_split(ft_values()->str, ' ');
+	ft_check_max(ft_values()->numbers, ft_values()->str);
+	if (ft_values()->numbers == NULL)
 		ft_error("Error\n", stack_a, NULL);
-	while (numbers[ki])
-		ft_end(stack_a, ft_atoi(numbers[ki++]));
-	ft_delete_matrice(numbers);
-	free(str);
+	while (ft_values()->numbers[ft_values()->ki])
+		ft_end(stack_a, ft_atoi(ft_values()->numbers[ft_values()->ki++]));
+	ft_delete_matrice(ft_values()->numbers);
+	free(ft_values()->str);
 	if (ft_check_sort(*stack_a) == 1)
 		ft_error(NULL, stack_a, NULL);
 }
 
-t_stack	*ft_lstend2(t_stack *lst)
+void	ft_same_digit(t_stack **a)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next->next)
-		lst = lst->next;
-	return (lst);
+	t_stack	*temp;
+	t_stack	*temp2;
+
+	temp = *a;
+	while (temp)
+	{
+		temp2 = temp->next;
+		while (temp2)
+		{
+			if (temp->x > INT_MAX || temp->x < INT_MIN)
+				ft_error("Error", a, NULL);
+			if (temp->x == temp2->x)
+				ft_error("Error", a, NULL);
+			temp2 = temp2->next;
+		}
+		temp = temp->next;
+	}
 }
 
 int	ft_check_sort(t_stack *a)

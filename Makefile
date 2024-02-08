@@ -4,10 +4,10 @@ CFLAGS	:= -Wall -Werror -Wextra -g3
 BIN := ./bin/
 SOURCE := ./sources/oi.c ./sources/0.main.c ./sources/9.errors.c \
 			./sources/2.list_creation.c ./sources/1.validate_arguments.c \
-				./sources/4.sort_below_five.c ./sources/3.push.c \
-					./sources/4.go_big.c ./sources/3.swap.c ./sources/3.rotate.c  ./sources/3.rev_rotate.c \
-						./sources/4.until_eighty.c ./sources/8.utils.c ./sources/5.costs_target.c \
-							./sources/real_matematica.c \
+				./sources/4.go_big.c ./sources/3.push.c ./sources/3.swap.c \
+					./sources/3.rotate.c  ./sources/3.rev_rotate.c \
+						./sources/4.go_small.c ./sources/8.utils.c ./sources/5.costs_target.c \
+							./sources/7.real_matematic.c ./sources/2.list_struct.c\
 
 HEADER	:= -I ./include/
 

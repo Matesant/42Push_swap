@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   4.sort_bellow_5.c                                  :+:      :+:    :+:   */
+/*   2.list_&_struct.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 17:36:39 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/31 17:28:46 by matesant         ###   ########.fr       */
+/*   Created: 2024/02/08 17:23:23 by matesant          #+#    #+#             */
+/*   Updated: 2024/02/08 17:28:49 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_push_swap.h"
 
-void	ft_sort_two(t_stack **a)
+t_values	*ft_values(void)
 {
-	if ((*a)->x > (*a)->next->x)
-		ft_sa(a);
+	static t_values	values;
+
+	return (&values);
 }
 
-void	ft_sort_three(t_stack **a)
+void	ft_init_struct(void)
 {
-	if ((*a)->x > (*a)->next->x
-		&& (*a)->x > (*a)->next->next->x)
-		ft_ra(a);
-	if ((*a)->next->x > (*a)->next->next->x && (*a)->next->x > (*a)->x)
-		ft_rra(a);
-	if ((*a)->x > (*a)->next->x)
-		ft_sa(a);
+	t_values	*values;
+
+	values = ft_values();
+	values->i = 0;
+	values->ki = 0;
+	values->str = NULL;
+	values->numbers = NULL;
+}
+
+t_stack	*ft_lstend2(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next->next)
+		lst = lst->next;
+	return (lst);
 }

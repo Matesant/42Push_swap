@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   4.until_eighty.c                                   :+:      :+:    :+:   */
+/*   4.sort_below_five.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 17:38:25 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/07 19:15:57 by matesant         ###   ########.fr       */
+/*   Created: 2024/01/24 17:36:39 by matesant          #+#    #+#             */
+/*   Updated: 2024/02/08 17:34:45 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_push_swap.h"
 
-int		ft_search(t_stack *a);
+int	ft_search(t_stack *a);
+
+void	ft_sort_two(t_stack **a)
+{
+	if ((*a)->x > (*a)->next->x)
+		ft_sa(a);
+}
+
+void	ft_sort_three(t_stack **a)
+{
+	if ((*a)->x > (*a)->next->x && (*a)->x > (*a)->next->next->x)
+		ft_ra(a);
+	if ((*a)->next->x > (*a)->next->next->x && (*a)->next->x > (*a)->x)
+		ft_rra(a);
+	if ((*a)->x > (*a)->next->x)
+		ft_sa(a);
+}
 
 void	ft_adjust_stack_a(t_stack **a, t_stack **b, int i, t_stack *temp)
 {
