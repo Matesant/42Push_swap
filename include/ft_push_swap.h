@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/08 17:33:31 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:41:04 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void				ft_same_digit(t_stack **a);
 // nodes creation
 t_stack				*ft_new_node(int value);
 void				ft_end(t_stack **node, int value);
-void				ft_validate_alloc(int argc, char **argv, t_stack **stack_a);
+void				ft_validate_alloc(char **argv, t_stack **stack_a);
 int					ft_listsize(t_stack *node);
 void				ft_begin(t_stack **x, int value);
 t_stack				*ft_lstend(t_stack *lst);

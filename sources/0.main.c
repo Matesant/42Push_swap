@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/08 17:32:51 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:40:48 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,14 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
+	if (argc == 1)
+		ft_error("Missing arguments", &stack_a, NULL);
 	ft_init_struct();
 	ft_ischaracter(++argv);
 	ft_empty(argv);
 	stack_a = NULL;
 	stack_b = NULL;
-	ft_validate_alloc(argc, argv, &stack_a);
+	ft_validate_alloc(argv, &stack_a);
 	ft_same_digit(&stack_a);
 	ft_call_sort(&stack_a, &stack_b);
 	ft_error(NULL, &stack_a, &stack_b);

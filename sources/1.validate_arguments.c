@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/08 17:33:00 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:40:55 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 int		ft_check_sort(t_stack *a);
 
-void	ft_validate_alloc(int argc, char **argv, t_stack **stack_a)
+void	ft_validate_alloc(char **argv, t_stack **stack_a)
 {
-	ft_values()->str = NULL;
-	if (argc == 1)
-		ft_error("Missing arguments", stack_a, NULL);
 	while (argv[ft_values()->i])
 	{
 		ft_values()->str = ft_strjoin(ft_values()->str, argv[ft_values()->i]);
