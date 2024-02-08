@@ -2,7 +2,7 @@ CC := cc
 NAME := push_swap
 CFLAGS	:= -Wall -Werror -Wextra -g3
 BIN := ./bin/
-SOURCE := ./sources/oi.c ./sources/0.main.c ./sources/9.errors.c \
+SOURCE := ./sources/0.main.c ./sources/9.errors.c \
 			./sources/2.list_creation.c ./sources/1.validate_arguments.c \
 				./sources/4.go_big.c ./sources/3.push.c ./sources/3.swap.c \
 					./sources/3.rotate.c  ./sources/3.rev_rotate.c \
