@@ -6,11 +6,11 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 11:39:47 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/15 10:50:16 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/15 17:22:35 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_push_swap.h"
+#include "ft_push_swap.h"
 
 void	ft_swap(t_stack **x)
 {

@@ -1,43 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   3.rotate.c                                         :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 11:56:09 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/15 10:50:06 by matesant         ###   ########.fr       */
+/*   Created: 2024/02/15 10:42:31 by matesant          #+#    #+#             */
+/*   Updated: 2024/02/15 18:32:31 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_push_swap.h"
+#include "checker.h"
 
-void	ft_rotate(t_stack **x)
+int	main(void)
 {
-	t_stack	*temp;
-	t_stack	*temp2;
-
-	if (!*x || !(*x)->next)
-		return ;
-	temp = *x;
-	temp2 = ft_lstend(*x);
-	*x = (*x)->next;
-	temp->next = NULL;
-	temp2->next = temp;
-}
-
-void	ft_ra(t_stack **a)
-{
-	ft_rotate(a);
-}
-
-void	ft_rb(t_stack **b)
-{
-	ft_rotate(b);
-}
-
-void	ft_rr(t_stack **a, t_stack **b)
-{
-	ft_rotate(a);
-	ft_rotate(b);
+	//ft_pb_bonus(NULL, NULL);
+	return (0);
 }

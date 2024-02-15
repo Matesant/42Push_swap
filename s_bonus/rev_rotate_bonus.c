@@ -1,35 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   3.push.c                                           :+:      :+:    :+:   */
+/*   3.rev_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 17:39:59 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/15 10:49:39 by matesant         ###   ########.fr       */
+/*   Created: 2024/01/30 14:22:35 by matesant          #+#    #+#             */
+/*   Updated: 2024/02/15 17:22:35 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_push_swap.h"
+#include "ft_push_swap.h"
 
-void	ft_push(t_stack **from, t_stack **to)
+void	ft_rev_rotate(t_stack **x)
 {
 	t_stack	*temp;
+	t_stack	*temp2;
 
-	if (!*from || !from)
+	if (!*x || !(*x)->next)
 		return ;
-	temp = *from;
-	*from = (*from)->next;
-	temp->next = *to;
-	*to = temp;
+	temp = ft_lstend(*x);
+	temp2 = ft_lstend2(*x);
+	temp->next = *x;
+	temp2->next = NULL;
+	*x = temp;
 }
 
-void	ft_pa(t_stack **a, t_stack **b)
+void	ft_rra(t_stack **a)
 {
-	ft_push(b, a);
+	ft_rev_rotate(a);
 }
 
-void	ft_pb(t_stack **a, t_stack **b)
+void	ft_rrb(t_stack **b)
 {
-	ft_push(a, b);
+	ft_rev_rotate(b);
+}
+
+void	ft_rrr(t_stack **a, t_stack **b)
+{
+	ft_rev_rotate(a);
+	ft_rev_rotate(b);
 }
