@@ -1,6 +1,7 @@
 CC := cc
 NAME := push_swap
-CFLAGS	:= -Wall -Werror -Wextra -g3
+NAME_BONUS := checker
+CFLAGS	:= -Wall -Werror -Wextra -g3 -O3
 BIN := ./bin/
 SOURCE := ./mandatory/0.main.c ./mandatory/9.errors.c \
 			./mandatory/2.list_creation.c ./mandatory/1.validate_arguments.c \

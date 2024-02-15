@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:02:20 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/07 19:18:16 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:36:02 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_dealocate(t_stack **node);
 
 void	ft_easy_error(char *str)
 {
-	ft_putstr_fd(str, 2);
+	ft_putendl_fd(str, 2);
 	exit(1);
 }
 
@@ -32,7 +32,7 @@ void	ft_error(char *str, t_stack **a, t_stack **b)
 	}
 	else
 	{
-		ft_printf("%s\n", str);
+		ft_putendl_fd(str, 2);
 		if (a)
 			ft_dealocate(a);
 		if (b)

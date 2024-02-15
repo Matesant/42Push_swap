@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/08 18:39:50 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:36:26 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_validate_alloc(char **argv, t_stack **stack_a)
 	ft_values()->numbers = ft_split(ft_values()->str, ' ');
 	ft_check_max(ft_values()->numbers, ft_values()->str);
 	if (ft_values()->numbers == NULL)
-		ft_error("Error\n", stack_a, NULL);
+		ft_error("Error", stack_a, NULL);
 	while (ft_values()->numbers[ft_values()->ki])
 		ft_end(stack_a, ft_atoi(ft_values()->numbers[ft_values()->ki++]));
 	ft_delete_matrice(ft_values()->numbers);
@@ -76,7 +76,7 @@ void	ft_empty(char **str)
 	while (str[i])
 	{
 		if ((!str) || (str[i][0] == '\0'))
-			ft_easy_error("Error\n");
+			ft_easy_error("Error");
 		k = 0;
 		while (str[i][k])
 		{
@@ -105,7 +105,7 @@ void	ft_ischaracter(char **str)
 		while (str[i][j])
 		{
 			if (!ft_isdigit(str[i][j]) && (!ft_isspace(str[i][j])))
-				ft_easy_error("Error\n");
+				ft_easy_error("Error");
 			j++;
 		}
 		i++;
