@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   3.rotate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 11:56:09 by matesant          #+#    #+#             */
-/*   Updated: 2024/01/30 14:20:54 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:50:06 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,15 @@ void	ft_rotate(t_stack **x)
 void	ft_ra(t_stack **a)
 {
 	ft_rotate(a);
-	ft_printf("ra\n");
 }
 
 void	ft_rb(t_stack **b)
 {
 	ft_rotate(b);
-	ft_printf("rb\n");
 }
 
 void	ft_rr(t_stack **a, t_stack **b)
 {
 	ft_rotate(a);
 	ft_rotate(b);
-	ft_printf("rr\n");
 }

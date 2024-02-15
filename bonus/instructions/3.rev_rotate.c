@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:22:35 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/02 17:13:45 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:49:52 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,15 @@ void	ft_rev_rotate(t_stack **x)
 void	ft_rra(t_stack **a)
 {
 	ft_rev_rotate(a);
-	ft_printf("rra\n");
 }
 
 void	ft_rrb(t_stack **b)
 {
 	ft_rev_rotate(b);
-	ft_printf("rrb\n");
 }
 
 void	ft_rrr(t_stack **a, t_stack **b)
 {
 	ft_rev_rotate(a);
 	ft_rev_rotate(b);
-	ft_printf("rrr\n");
 }
