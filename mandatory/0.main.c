@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/15 10:36:44 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/16 18:09:47 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,20 @@ void	ft_call_sort(t_stack **a, t_stack **b)
 		ft_below_fifty(a, b);
 }
 
+int	ft_check_sorted(t_stack *stack_a)
+{
+	t_stack	*tmp;
+
+	tmp = stack_a;
+	while (tmp->next)
+	{
+		if (tmp->x > tmp->next->x)
+			return (1);
+		tmp = tmp->next;
+	}
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -45,6 +59,8 @@ int	main(int argc, char **argv)
 	ft_validate_alloc(argv, &stack_a);
 	ft_same_digit(&stack_a);
 	ft_call_sort(&stack_a, &stack_b);
+	while (ft_check_sorted(stack_a) == 1)
+		ft_rra(&stack_a);
 	ft_error(NULL, &stack_a, &stack_b);
 	return (0);
 }
