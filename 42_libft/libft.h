@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 14:52:28 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/07 16:31:18 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/16 12:09:31 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,17 @@ int					ft_isspace(int c);
 int					ft_issignal(char str);
 long				ft_atol(const char *str);
 int					ft_abs(int n);
+
+// GNL
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
+char				*get_next_line(int fd);
+size_t				g_ft_strlen(const char *str);
+char				*g_ft_strjoin(const char *dest, char *str);
+char				*g_ft_strchr(const char *str, int c);
+char				*g_ft_strdup(const char *str);
+size_t				g_ft_strlcpy(char *dest, const char *str, size_t n);
 
 #endif

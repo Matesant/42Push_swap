@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 17:39:59 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/15 18:26:58 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/16 15:01:27 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ void	ft_pa(t_stack **a, t_stack **b)
 	ft_push(b, a);
 }
 
-void	ft_pb_bonus(t_stack **a, t_stack **b)
+void	ft_pb(t_stack **a, t_stack **b)
 {
-	ft_printf("pb\n");
 	ft_push(a, b);
 }

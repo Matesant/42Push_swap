@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/15 18:55:23 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/16 15:01:46 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void				ft_strip(char *str);
 
 //instructions
 void				ft_pa(t_stack **a, t_stack **b);
-void				ft_pb_bonus(t_stack **a, t_stack **b);
+void				ft_pb(t_stack **a, t_stack **b);
 void				ft_sb(t_stack **b);
 void				ft_sa(t_stack **a);
 void				ft_ss(t_stack **a, t_stack **b);
