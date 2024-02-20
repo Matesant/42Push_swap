@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/16 18:09:47 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/20 11:53:05 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 
 	if (argc == 1)
-		ft_error("Error", NULL, NULL);
+		exit(0);
 	ft_init_struct();
 	ft_ischaracter(++argv);
 	ft_empty(argv);

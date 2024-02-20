@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:57:36 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/16 12:08:27 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/20 12:25:44 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,11 @@ char	*get_next_line(int fd)
 	static char	*next_line;
 
 	if (BUFFER_SIZE <= 0 || fd < 0)
+	{
+		free(next_line);
+		next_line = NULL;
 		return (NULL);
+	}
 	next_line = ft_get_new_line(fd, next_line);
 	if (next_line == NULL)
 		return (NULL);

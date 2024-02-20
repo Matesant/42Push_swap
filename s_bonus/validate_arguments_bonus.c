@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/15 18:54:00 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/20 12:13:32 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ void	ft_validate_alloc(char **argv, t_stack **stack_a)
 		ft_end(stack_a, ft_atoi(ft_values()->numbers[ft_values()->ki++]));
 	ft_delete_matrice(ft_values()->numbers);
 	free(ft_values()->str);
-	if (ft_check_sort(*stack_a) == 1)
-		ft_error(NULL, stack_a, NULL);
 }
 
 void	ft_same_digit(t_stack **a)
@@ -54,18 +52,6 @@ void	ft_same_digit(t_stack **a)
 	}
 }
 
-int	ft_check_sort(t_stack *a)
-{
-	while (1)
-	{
-		if (a->next == NULL)
-			return (1);
-		if (a->next->x > a->x)
-			a = a->next;
-		else
-			return (0);
-	}
-}
 
 void	ft_empty(char **str)
 {

@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:42:31 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/16 15:58:03 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/20 12:33:15 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_moves(t_stack **a, t_stack **b, char *line);
 void	read_moves(t_stack **a, t_stack **b);
-short	ft_is_sorted(t_stack *a);
+int		ft_is_sorted(t_stack *a);
+void	ft_byebye(char *str, t_stack **a, t_stack **b, char *line);
 
 int	main(int argc, char **argv)
 {
@@ -39,7 +40,7 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-short	ft_is_sorted(t_stack *a)
+int	ft_is_sorted(t_stack *a)
 {
 	while (1)
 	{
@@ -62,7 +63,9 @@ void	read_moves(t_stack **a, t_stack **b)
 		if (!line)
 			break ;
 		ft_moves(a, b, line);
+		free(line);
 	}
+	free(line);
 	get_next_line(-1);
 }
 
@@ -91,6 +94,11 @@ void	ft_moves(t_stack **a, t_stack **b, char *line)
 	else if (!ft_strncmp(line, "rrr\n", 3))
 		ft_rrr(a, b);
 	else
-		ft_error("Error", a, b);
+		ft_byebye("Error", a, b, line);
+}
+
+void	ft_byebye(char *str, t_stack **a, t_stack **b, char *line)
+{
 	free(line);
+	ft_error(str, a, b);
 }
