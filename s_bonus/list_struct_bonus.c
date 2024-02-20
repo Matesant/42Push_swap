@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 17:23:23 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/15 18:52:58 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:57:28 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,13 @@ void	ft_out_of_order_signals(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == '-' && (str[i + 1] < '0' || str[i + 1] > '9'))
+		if (str[i] == '-' && (str[i + 1] < '0' && str[i + 1] > '9'))
 			ft_error("Error", NULL, NULL);
-		if (str[i] == '+' && (str[i + 1] < '0' || str[i + 1] > '9'))
+		if (str[i] == '+' && (str[i + 1] < '0' && str[i + 1] > '9'))
+			ft_error("Error", NULL, NULL);
+		if (str[i] == '-' && str[i - 1] != ' ' && str[i - 1] != '\0')
+			ft_error("Error", NULL, NULL);
+		if (str[i] == '+' && str[i - 1] != ' ' && str[i - 1] != '\0')
 			ft_error("Error", NULL, NULL);
 		i++;
 	}

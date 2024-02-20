@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/20 12:13:32 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:56:39 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,27 @@ int		ft_check_sort(t_stack *a);
 
 void	ft_validate_alloc(char **argv, t_stack **stack_a)
 {
-	while (argv[ft_values()->i])
+	int		i;
+	char	**numbers;
+	char	*str;
+	int		ki;
+
+	i = 0;
+	ki = 0;
+	str = ft_strdup("");
+	while (argv[i])
 	{
-		ft_values()->str = ft_strjoin(ft_values()->str, argv[ft_values()->i]);
-		ft_values()->i++;
+		str = ft_strjoin(str, argv[i]);
+		i++;
 	}
-	ft_values()->numbers = ft_split(ft_values()->str, ' ');
-	ft_check_max(ft_values()->numbers, ft_values()->str);
-	if (ft_values()->numbers == NULL)
+	numbers = ft_split(str, ' ');
+	ft_check_max(numbers, str);
+	if (numbers == NULL)
 		ft_error("Error", stack_a, NULL);
-	while (ft_values()->numbers[ft_values()->ki])
-		ft_end(stack_a, ft_atoi(ft_values()->numbers[ft_values()->ki++]));
-	ft_delete_matrice(ft_values()->numbers);
-	free(ft_values()->str);
+	while (numbers[ki])
+		ft_end(stack_a, ft_atoi(numbers[ki++]));
+	ft_delete_matrice(numbers);
+	free(str);
 }
 
 void	ft_same_digit(t_stack **a)
@@ -52,7 +60,6 @@ void	ft_same_digit(t_stack **a)
 	}
 }
 
-
 void	ft_empty(char **str)
 {
 	int	i;
@@ -66,6 +73,9 @@ void	ft_empty(char **str)
 		k = 0;
 		while (str[i][k])
 		{
+			if ((str[i][k] == '-' || str[i][k] == '+') && !ft_isdigit(str[i][k
+					+ 1]))
+				ft_error("Error", NULL, NULL);
 			ft_is_only_space(str[i]);
 			ft_out_of_order_signals(str[i]);
 			if (str[i][k] != ' ' && str[i][k] != '+' && str[i][k] != '-')

@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:42:31 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/20 12:33:15 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:46:41 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 
 	if (argc == 1)
-		ft_error("Error", NULL, NULL);
+		exit(0);
 	ft_init_struct();
 	ft_ischaracter(++argv);
 	ft_empty(argv);
@@ -71,7 +71,7 @@ void	read_moves(t_stack **a, t_stack **b)
 
 void	ft_moves(t_stack **a, t_stack **b, char *line)
 {
-	if (!ft_strncmp(line, "sa\n", 2))
+	if (!ft_strncmp(line, "sa\n", 3))
 		ft_sa(a);
 	else if (!ft_strncmp(line, "sb\n", 3))
 		ft_sb(b);
@@ -87,11 +87,11 @@ void	ft_moves(t_stack **a, t_stack **b, char *line)
 		ft_rb(b);
 	else if (!ft_strncmp(line, "rr\n", 3))
 		ft_rr(a, b);
-	else if (!ft_strncmp(line, "rra\n", 3))
+	else if (!ft_strncmp(line, "rra\n", 4))
 		ft_rra(a);
-	else if (!ft_strncmp(line, "rrb\n", 3))
+	else if (!ft_strncmp(line, "rrb\n", 4))
 		ft_rrb(b);
-	else if (!ft_strncmp(line, "rrr\n", 3))
+	else if (!ft_strncmp(line, "rrr\n", 4))
 		ft_rrr(a, b);
 	else
 		ft_byebye("Error", a, b, line);
