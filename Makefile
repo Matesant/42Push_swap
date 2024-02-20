@@ -71,6 +71,7 @@ fclean: clean
 	@make -C ./42_libft/Printf --no-print-directory fclean
 	@make -C ./42_libft --no-print-directory fclean
 	@rm -rf $(NAME)
+	@rm -rf $(NAME_BONUS)
 	@printf "$(GREEN)All cleaned!$(END)\n"
 
 re: fclean all
