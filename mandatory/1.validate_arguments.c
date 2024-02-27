@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:02:02 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/20 17:55:07 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/27 19:47:27 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ void	ft_empty(char **str)
 	i = 0;
 	while (str[i])
 	{
-		if ((!str) || (str[i][0] == '\0'))
-			ft_easy_error("Error");
+		if (str[i][0] == '\0' || !str)
+			exit(0);
 		k = 0;
 		while (str[i][k])
 		{
