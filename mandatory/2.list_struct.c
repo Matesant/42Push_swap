@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 17:23:23 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/28 11:44:45 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/28 14:24:21 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	ft_is_only_space(char *str)
 	{
 		if (ft_isdigit(str[i]) == 1)
 			flag = 1;
-		if (str[i] == '\0' && flag == 0)
+		if (str[i + 1] == '\0' && flag == 0)
 			ft_error("Error", NULL, NULL);
-		if (str[i] == '\0' && flag == 1)
+		if (str[i + 1] == '\0' && flag == 1)
 			return ;
 		i++;
 	}
