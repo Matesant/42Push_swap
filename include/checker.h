@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:16:16 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/16 15:01:46 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/28 11:45:35 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,6 @@ typedef struct s_stack
 	int				cost_a;
 	int				cost_b;
 }					t_stack;
-
-typedef struct s_values
-{
-	int				i;
-	char			**numbers;
-	char			*str;
-	int				ki;
-}					t_values;
-
-//structs
-void				ft_init_struct(void);
-t_values			*ft_values(void);
 
 // error handling
 void				ft_error(char *str, t_stack **a, t_stack **b);
@@ -78,5 +66,4 @@ void				ft_rrb(t_stack **b);
 void				ft_rra(t_stack **a);
 void				ft_rrr(t_stack **a, t_stack **b);
 
-void				ft_print_stack(t_stack *b);
 #endif

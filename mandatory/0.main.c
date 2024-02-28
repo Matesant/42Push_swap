@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:43:57 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/20 15:41:43 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/28 11:46:11 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_call_sort(t_stack **a, t_stack **b)
 		ft_sort_two(a);
 	else if (len == 3)
 		ft_sort_three(a);
-	else if (len < 4)
+	else if (len < 10)
 		ft_below_fifty(a, b);
 	else if (len < 2001)
 		ft_go_big(a, b);
@@ -51,7 +51,6 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		exit(0);
-	ft_init_struct();
 	ft_ischaracter(++argv);
 	ft_empty(argv);
 	stack_a = NULL;

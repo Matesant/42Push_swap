@@ -6,7 +6,7 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:42:31 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/20 17:46:41 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/28 11:45:51 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		exit(0);
-	ft_init_struct();
 	ft_ischaracter(++argv);
 	ft_empty(argv);
 	stack_a = NULL;

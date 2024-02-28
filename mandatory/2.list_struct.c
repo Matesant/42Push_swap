@@ -6,29 +6,11 @@
 /*   By: matesant <matesant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 17:23:23 by matesant          #+#    #+#             */
-/*   Updated: 2024/02/27 19:45:11 by matesant         ###   ########.fr       */
+/*   Updated: 2024/02/28 11:44:45 by matesant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_push_swap.h"
-
-t_values	*ft_values(void)
-{
-	static t_values	values;
-
-	return (&values);
-}
-
-void	ft_init_struct(void)
-{
-	t_values	*values;
-
-	values = ft_values();
-	values->i = 0;
-	values->ki = 0;
-	values->str = NULL;
-	values->numbers = NULL;
-}
 
 t_stack	*ft_lstend2(t_stack *lst)
 {
@@ -45,16 +27,17 @@ void	ft_is_only_space(char *str)
 	int	flag;
 
 	i = 0;
+	flag = 0;
 	while (str[i])
 	{
-		if (ft_isdigit(str[i]))
+		if (ft_isdigit(str[i]) == 1)
 			flag = 1;
-		if (str[i] == ' ' || str[i] >= 9 || str[i] <= 13)
-			i++;
 		if (str[i] == '\0' && flag == 0)
 			ft_error("Error", NULL, NULL);
+		if (str[i] == '\0' && flag == 1)
+			return ;
+		i++;
 	}
-	ft_error("Error", NULL, NULL);
 }
 
 void	ft_out_of_order_signals(char *str)
